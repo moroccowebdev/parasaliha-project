@@ -13,7 +13,7 @@ const ClientList = () => {
                 <Link to={'/addClient'} className='parasaliha__clientList__header__link'>AddClient</Link>
             </div>
 
-            <table border={1} className="parasaliha__clientList__table">
+            <table className="parasaliha__clientList__table">
                 <thead>
                     <tr>
                         <th>CIN</th>

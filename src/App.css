@@ -450,6 +450,7 @@ body {
   font-weight: var(--semiBold);
   letter-spacing: calc(var(--letter) - .2px);
   color: var(--black-50);
+  border-collapse:collapse;
 }
 
 .parasaliha__clientList__table th, td {
@@ -556,7 +557,6 @@ body {
   position: absolute;
   width: 265px;
   bottom: 0;
-  /* left: 0; */
   height: 4px;
   background-color: var(--primary);
 }
