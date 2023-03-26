@@ -1,38 +1,568 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Poppins:wght@300;500;600;700;800;900&display=swap');
+
+:root {
+  /* colors */
+  --black-100: #161616;
+  --black-75: #161616bf;
+  --black-50: #16161680;
+  --black-25: #16161640;
+  --black-5:#1616160d;
+  --white: #FFFFFF;
+  --primary: #00C9A7;
+  --secondary: #845EC2;
+  --linear:  linear-gradient(230.14deg, #005B44 13.98%, rgba(193, 151, 255, 0) 114.52%);
+  --shadow: rgba(151, 71, 255, 0.3);
+  --error: #CF3D2A;
+
+  /* fonts */
+  --text-font: 'Inter', sans-serif;
+  --title-font: 'Poppins', sans-serif;
+
+  /* weight */
+  --extraLight:200;
+  --light:300;
+  --regular:400;
+  --medium:500;
+  --semiBold:600;
+  --Bold:700;
+
+  /* size */
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --p: 1.563rem;
+
+  /* spacing */
+  --letter: 1px;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+
+body {
+  width: 100%;
+  max-width: 1800px;
+}
+
+@media screen and (max-width: 63.8125em) {
+  html {
+    font-size: 9px;
+  }
+}
+
+/** header */
+
+.parasaliha__home__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 6rem;
+}
+
+.parasaliha__home__header__logo {
+  width: 13%;
+}
+
+.parasaliha__home__header__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style-type: none;
+  font-size: calc(var(--p) + .02rem);
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+  letter-spacing: var(--letter);
+  line-height: 1.75;
+}
+
+.parasaliha__home__header__list li a {
+  color: var(--black-100);
+  text-decoration: none;
+}
+
+.parasaliha__home__header__list li a:hover {
+  color: var(--secondary);
+}
+/* * responsive header */
+
+@media screen and (max-width: 63.8125em) {
+  .parasaliha__home__header {
+    margin: 1rem 4.5rem;
+  }
+
+  .parasaliha__home__header__logo {
+    width: 19%;
+  }
+}
+
+/* * end header */
+
+/* ? hero */
+.parasaliha__home__hero {
+  width: 100%;
+  height: 89.9vh;
+  background: url('./img/pexels-alex-green-5699524.jpg') no-repeat;
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7rem;
+  color: var(--white);
+}
+
+.parasaliha__home__hero__title {
+  font-size: var(--h1);
+  letter-spacing: var(--letter);
+  font-family: var(--title-font);
+}
+
+.parasaliha__home__hero__text {
+  font-size: var(--h3);
+  letter-spacing: var(--letter);
+  font-family: var(--text-font);
+  font-weight: var(--regular);
+}
+
+.parasaliha__home__hero__search {
+  background-color: var(--white);
+  padding: 1.3rem;
+  font-family: var(--text-font);
+  font-weight: var(--regular);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: 55%;
+}
+
+.parasaliha__home__hero__search select {
+  padding: .5rem;
+  background-color: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: var(--medium);
+  font-size: calc(var(--p) + .2rem);
+}
+
+.parasaliha__home__hero__search .search {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-left: 2px solid var(--black-25);
+  padding: .5rem 2rem;
+  letter-spacing: calc(var(--letter) - .02px);
+  color: var(--black-75);
+  font-size: calc(var(--p) + .2rem);
+
+}
+
+.parasaliha__home__hero__search ion-icon {
+  color: var(--black-75);
+  font-size: var(--h1);
+  cursor: pointer;
+}
+/* ? end header */
+
+/* ! product list */
+.parasaliha__home__products {
+  width: 100%;
+  margin: 3rem auto;
+}
+.parasaliha__home__products__title {
+  color: var(--black-100);
+  font-size: var(--h1);
+  font-family: var(--title-font);
+  line-height: 1.75;
+  letter-spacing: var(--letter);
+  text-align: center;
+  margin: 1rem 0;
+}
+.parasaliha__home__products__cards {
+  margin: 1rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+}
+
+.parasaliha__home__products__cards__card {
+  width: 18%;
+  padding: 2rem;
+}
+
+.parasaliha__home__products__cards__card__top {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.parasaliha__home__products__cards__card__content__title {
+  font-size: var(--h3);
+  font-family: var(--title-font);
+  letter-spacing: var(--letter);
+  color: var(--black-100);
+  margin: 1rem 0;
+}
+
+.parasaliha__home__products__cards__card__content__link {
+  font-size: var(--p);
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--black-75);
+}
+
+.parasaliha__home__products__cards__card__content__link:hover {
+  color: var(--primary);
+}
+
+/* ! responsive product list page */
+@media screen and (max-width: 63.8125em) {
+  .parasaliha__home__products__cards {
+    justify-content: center;
+  }
+  
+  .parasaliha__home__products__cards__card {
+    width: 26.5%;
+  }
+}
+/* ! end product list */
+
+/* Add client page */
+.parasaliha__addClient {
+  margin: 3rem 6rem;
+}
+
+.parasaliha__addClient__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .2rem;
+  font-size: var(--p);
+  text-decoration: none;
+  color: var(--black-50);
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+}
+
+.parasaliha__addClient__link:hover {
+  color: var(--secondary);
+}
+
+.parasaliha__addClient__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: .5rem;
+}
+
+.parasaliha__addClient__logo img {
+  width: 25%;
+  margin: 1rem 0;
+}
+
+.parasaliha__addClient__form__title {
+  font-family: var(--title-font);
+  font-size: var(--h1);
+  letter-spacing: calc(var(--letter) + .3px);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.parasaliha__addClient__form__control {
+  margin: 1rem auto;
+  width: 45%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: first baseline;
+  margin-block: 3rem;
+}
+.parasaliha__addClient__form__control__label {
+  display: block;
+  text-align: start ;
+  margin: 1rem 0;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--secondary);
 }
 
-.App-link {
-  color: #61dafb;
+.parasaliha__addClient__form__control__input {
+  width: 100%;
+  padding: 1rem 1.3rem;
+  margin-block-end: 1.5rem;
+  outline: none;
+  border: 1px solid var(--black-50);
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--black-75);
+  box-sizing: border-box;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.parasaliha__addClient__form__control__input:hover {
+  border: 1px solid var(--secondary);
+}
+
+.parasaliha__addClient__form__control__input:focus {
+  box-shadow: 0px 0px 0px 4px var(--shadow);
+}
+
+.parasaliha__addClient__form__control__btn {
+  background: var(--linear);
+  width: 100%;
+  margin-block: 1.3rem;
+  padding: 1.3rem;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.parasaliha__addClient__form__control__btn:hover {
+  opacity: .95;
+}
+
+/* !!! start dropdown styling !!! */
+.dropdown-menu {
+  background-color: var(--white);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: calc(var(--p) + .02rem);
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+  letter-spacing: var(--letter);
+  line-height: 1.75;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  color: var(--black-100);
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  color: var(--secondary);
+}
+
+.dropdown-toggle:hover {
+  color: var(--secondary);
+}
+/* !!! end dropdown !!! */
+
+/* ? client list page */
+.parasaliha__clientList {
+  margin: 1rem 6rem;
+}
+
+.parasaliha__clientList__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+.parasaliha__clientList__header__filter {
+  border: 1px solid var(--black-75);
+  padding: 1rem;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parasaliha__clientList__header__filter:hover {
+  border: 1px solid var(--secondary);
+  box-shadow: 0px 0px 0px 4px var(--shadow);
+}
+
+.parasaliha__clientList__header__filter input {
+  border: none;
+  padding: 0rem 1rem;
+  outline: none;
+  width: 90%;
+  font-size: var(--p);
+  font-family: var(--text-font);
+  font-weight: var(--medium);
+  letter-spacing: var(--letter);
+  line-height: 1.75;
+}
+
+.parasaliha__clientList__header__filter ion-icon {
+  font-size: var(--h3);
+}
+
+.parasaliha__clientList__header__link {
+  background: var(--linear);
+  width: 18%;
+  margin-block: 1.3rem;
+  padding: 1.3rem;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.parasaliha__clientList__header__link:hover {
+  opacity: .95;
+}
+
+.parasaliha__clientList__table {
+  width: 100%;
+  margin: 3rem auto;
+  text-align: center;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  color: var(--black-50);
+}
+
+.parasaliha__clientList__table th, td {
+  padding: 1.7rem;
+}
+
+.parasaliha__clientList__table th {
+  background-color: var(--black-25);
+  opacity: .8;
+}
+
+.success span {
+  background-color: var(--primary);
+  padding: .6rem 2.6rem;
+  color: var(--white);
+}
+
+.denied span {
+  background-color: var(--error);
+  padding: .6rem 2.6rem;
+  color: var(--white);
+}
+
+.parasaliha__clientList__table td ion-icon {
+  font-size: calc(var(--p) + 1rem);
+  cursor: pointer;
+}
+
+.parasaliha__clientList__table td ion-icon:hover {
+  color: var(--black-75);
+}
+/* ? client list end */
+
+/* * product item page */
+.parasaliha__productItem {
+  margin: 3rem 6rem;
+}
+
+.parasaliha__productItem__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.parasaliha__productItem__card__left, .parasaliha__productItem__card__right {
+  width: 48%;
+}
+
+@media screen and (max-width: 63.8125em) {
+  .parasaliha__productItem__card {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .parasaliha__productItem__card__left, .parasaliha__productItem__card__right {
+    width: 100%;
+  }
+}
+.parasaliha__productItem__card__right__title {
+  font-size: var(--h1);
+  letter-spacing: var(--letter);
+  font-family: var(--title-font);
+  margin-block-end: 2rem;
+}
+
+.parasaliha__productItem__card__right__category {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  margin: 3rem 0;
+}
+
+.parasaliha__productItem__card__right__category p:last-child{
+  font-weight: var(--regular);
+}
+
+.parasaliha__productItem__card__right__description {
+  display: block;
+  font-family: var(--text-font);
+  font-size: var(--p);
+  font-weight: var(--semiBold);
+  letter-spacing: calc(var(--letter) - .2px);
+  margin: 3rem 0;
+}
+
+
+
+.parasaliha__productItem__card__right__description p:last-child{
+  font-weight: var(--regular);
+  margin: 1rem 0;
+  line-height: 1.65;
+}
+
+.parasaliha__productItem .parasaliha__home__products__title {
+  position: relative;
+}
+
+.parasaliha__productItem .parasaliha__home__products__title::before {
+  content: "";
+  position: absolute;
+  width: 265px;
+  bottom: 0;
+  /* left: 0; */
+  height: 4px;
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 63.8125em ) {
+  .parasaliha__productItem .parasaliha__home__products__title::before {
+    width: 240px;
   }
 }
